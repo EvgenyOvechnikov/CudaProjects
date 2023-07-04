@@ -209,7 +209,7 @@ main(int argc, char* argv[])
     CudaCheckError();
 
     // execute the kernel:
-    MonteCarlo << < grid, threads >> > (dtxs, dtys, dtxvs, dsvs, dsths, dhalflens, dhits);
+    MonteCarlo <<< grid, threads >>> (dtxs, dtys, dtxvs, dsvs, dsths, dhalflens, dhits);
 
     // record the stop event:
     cudaEventRecord(stop, NULL);
